@@ -6,15 +6,25 @@
 const $style = document.createElement('style')
 
 const setCustomCss = (data: any[]) => {
-  const $head = document.head || document.getElementsByTagName('head')[0]
-  const $body = document.body || document.getElementsByTagName('body')[0]
-
-  $body.classList.add('fugon-voz')
-
   const siteConfig = data.find((site: any) => site.domains.includes(window.location.hostname))
 
-  $style.appendChild(document.createTextNode(siteConfig?.css))
-  $head.appendChild($style)
+  if (siteConfig && siteConfig.readOnly !== true) {
+    const $head = document.head || document.getElementsByTagName('head')[0]
+    const $body = document.body || document.getElementsByTagName('body')[0]
+
+    $body.classList.add('fugon-voz')
+    $style.appendChild(document.createTextNode(siteConfig?.css))
+    $head.appendChild($style)
+  }
+
+  if (siteConfig.readOnly) {
+    const $head = document.head || document.getElementsByTagName('head')[0]
+    const $body = document.body || document.getElementsByTagName('body')[0]
+
+    $body.classList.add('fugon-voz-read-only')
+    $style.appendChild(document.createTextNode(siteConfig?.readOnlyCss))
+    $head.appendChild($style)
+  }
 }
 
 // eslint-disable-next-line space-before-function-paren
