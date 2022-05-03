@@ -8,7 +8,7 @@ const $style = document.createElement('style')
 const setCustomCss = (data: any[]) => {
   const siteConfig = data.find((site: any) => site.domains.includes(window.location.hostname))
 
-  if (siteConfig && siteConfig.readOnly !== true) {
+  if (siteConfig && siteConfig?.readOnly !== true) {
     const $head = document.head || document.getElementsByTagName('head')[0]
     const $body = document.body || document.getElementsByTagName('body')[0]
 
@@ -17,7 +17,7 @@ const setCustomCss = (data: any[]) => {
     $head.appendChild($style)
   }
 
-  if (siteConfig.readOnly) {
+  if (siteConfig?.readOnly) {
     const $head = document.head || document.getElementsByTagName('head')[0]
     const $body = document.body || document.getElementsByTagName('body')[0]
 

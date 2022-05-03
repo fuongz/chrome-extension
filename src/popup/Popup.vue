@@ -38,7 +38,8 @@ const data = ref<Coin[]>([])
 
 onMounted(async () => {
   try {
-    const res = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=beamswap,harmony,near,solana,binancecoin,defi-kingdoms,babyswap&vs_currencies=usd')
+    const arrCoins = ['calo-app', 'beamswap', 'harmony', 'binancecoin', 'defi-kingdoms', 'babyswap']
+    const res = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${arrCoins.join(',')}&vs_currencies=usd`)
     const resJson = await res.json()
 
     const resData: Coin[] = Object.keys(resJson).map((key: any) => ({
