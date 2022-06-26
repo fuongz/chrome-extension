@@ -5,6 +5,8 @@
     "@typescript-eslint/comma-dangle": ["off"],
     "@typescript-eslint/brace-style": ["off"],
     "no-console": ["off"],
-    "antfu/if-newline": ["off"]
+    "antfu/if-newline": ["off"],
+    "vue/singleline-html-element-content-newline": ["off"],
+    "vue/html-self-closing": ["off"]
   }
 }

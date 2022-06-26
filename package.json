@@ -1,8 +1,8 @@
 {
-  "name": "fugon11-chrome-extension",
-  "displayName": "Fugon11's Chrome Extension",
-  "version": "0.0.1",
-  "description": "[description]",
+  "name": "i-am-fuongz",
+  "displayName": "I'm Fuongz",
+  "version": "0.0.3",
+  "description": "This is a personal extension.",
   "private": true,
   "scripts": {
     "dev": "npm run clear && cross-env NODE_ENV=development run-p dev:*",

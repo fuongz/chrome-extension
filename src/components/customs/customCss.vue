@@ -1,7 +1,3 @@
-<template>
-  <div />
-</template>
-
 <script setup lang="ts">
 const $style = document.createElement('style')
 
@@ -27,7 +23,6 @@ const setCustomCss = (data: any[]) => {
   }
 }
 
-// eslint-disable-next-line space-before-function-paren
 const getCss = async () => {
   const getGist = await fetch('https://api.github.com/gists/eb9fa838e1a1d7fd0608a3473f26c9bd')
 
@@ -41,7 +36,6 @@ const getCss = async () => {
   }
 }
 
-// eslint-disable-next-line space-before-function-paren
 onBeforeMount(async () => {
   const customSites = window.localStorage.getItem('fugon-custom-sites')
   const customSitesRefreshTime = window.localStorage.getItem('fugon-custom-sites-refresh-time')
@@ -58,3 +52,7 @@ onBeforeMount(async () => {
   }
 })
 </script>
+
+<template>
+  <div />
+</template>
